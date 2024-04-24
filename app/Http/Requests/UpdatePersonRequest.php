@@ -100,6 +100,7 @@ class UpdatePersonRequest extends FormRequest
     {
         $this->merge([
             'mobile' => $this->prefixMobileNumberWithCountryCode($this->mobile) ?? $this->mobile,
+            'birth_date' => $this->getGenerateBirthDateFromSouthAfricanId($this->south_african_id_no),
         ]);
     }
 }

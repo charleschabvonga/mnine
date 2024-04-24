@@ -116,23 +116,6 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="birth_date"
-                            class="col-md-4 col-form-label text-md-end text-start">
-                            Birth Date
-                        </label>
-                        <div class="col-md-6">
-                          <input type="date"
-                          class="form-control @error('birth_date') is-invalid @enderror"
-                          id="birth_date"
-                          name="birth_date"
-                          value="{{ old('birth_date', isset($person) ? $person->birth_date : '') }}">
-                            @error('birth_date')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
                         <label for="language" 
                             class="col-md-4 col-form-label text-md-end text-start">
                             Languages

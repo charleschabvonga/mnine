@@ -3,12 +3,14 @@
 namespace App\Http\Requests;
 
 use App\Rules\SouthAfricanIdNumber;
+use App\Traits\GenerateBirthDateFromSouthAfricanIdTrait;
 use App\Traits\PrefixMobileNumberTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePersonRequest extends FormRequest
 {
-    use PrefixMobileNumberTrait;
+    use GenerateBirthDateFromSouthAfricanIdTrait, PrefixMobileNumberTrait;
+    
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -98,6 +100,7 @@ class StorePersonRequest extends FormRequest
     {
         $this->merge([
             'mobile' => $this->prefixMobileNumberWithCountryCode($this->mobile) ?? $this->mobile,
+            'birth_date' => $this->getGenerateBirthDateFromSouthAfricanId($this->south_african_id_no),
         ]);
     }
 }
