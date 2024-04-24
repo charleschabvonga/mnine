@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -28,8 +29,11 @@ class UserSeeder extends Seeder
                 'password' => static::$password ??= Hash::make('password'),
                 'remember_token' => str::random(10),
             ]);
-    
-            User::factory(9)->create();
+            
+            if (App::isLocal()) {
+                User::factory(9)->create();
+            }
+           
         }
     }
 }
