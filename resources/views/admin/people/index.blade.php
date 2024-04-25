@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('content')
+@section('admin')
 
 <div class="mb-2" class="row">
     @session('success')
