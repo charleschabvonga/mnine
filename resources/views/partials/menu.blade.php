@@ -6,7 +6,7 @@
     </div>
     <ul class="c-sidebar-nav ml-3">
         <li class="c-sidebar-nav-item">
-            <a href="{{ route("admin.home") }}" class="c-sidebar-nav-link">
+            <a href="{{ route("home") }}" class="c-sidebar-nav-link">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt"></i>
                 Dashboard
             </a>
