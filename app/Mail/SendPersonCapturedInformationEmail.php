@@ -28,7 +28,7 @@ class SendPersonCapturedInformationEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('do-not-reply@mnine.co.za', 'admin'),
+            from: new Address('do-not-reply@mnine.xyz', 'admin'),
             subject: 'Details Captured',
         );
     }

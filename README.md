@@ -1,34 +1,71 @@
-# Laravel Sample
-
-> Laravel sample website with content retrieving from [mnine.xyz](http://mnine.xyz)
-
-This project runs with Laravel version 11.
+# Mnine - Project With Laravel 11.x
+[Mnine](http://mnine.xyz)
 
 ## Getting started
 
 Assuming you've already installed on your machine: PHP (>= 8.1.0), [Laravel](https://laravel.com), [Composer](https://getcomposer.org) and Node (>= 20)[Node.js](https://nodejs.org).
 
-``` bash
-# install dependencies
-composer install
-npm install
+### Step by step
+Clone this Repository
+```sh
+git clone https://github.com/charleschabvonga/mnine
+```
 
-# create .env file and generate the application key
+Switch to the project folder
+```sh
+cd mnine
+```
+
+Create the .env file
+```sh
 cp .env.example .env
-php artisan key:generate
+```
 
-# update database credentials in the .env file
-#run migrations and seeders
-php artisan migrate --seed
+Log in or sign up for your RapidAPI account.
+Navigate to any API documentation page by searching for or clicking on one of the collections from the homepage.
+Scroll down to the "Header Parameters" section of the API console.
+Your API Key should be visible in the "X-RapidAPI-Key" field.
+Update environment variables in .env
+```dosini
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=your_db_name
+DB_USERNAME=your_user_name
+DB_PASSWORD=your_password
 
-# build CSS and JS assets
+MAIL_MAILER=your_mail_mailer
+MAIL_HOST=your_mail_host
+MAIL_PORT=your_mail_port
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=yourmail@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+RAPID_API_KEY=your_X-RapidAPI-Key
+```
+
+Install project dependencies
+```sh
+composer install
 npm install && npm run dev
 ```
 
-Then launch the server:
+Generate the Laravel project key
+```sh
+php artisan key:generate
+```
 
+Run migrations and seeds
+```sh
+php artisan migrate --seed
+```
+
+Then launch the server:
 ``` bash
 php artisan serve
 ```
 
-The Laravel sample project is now up and running! Access it at http://localhost:8000.
+Access the project
+[http://localhost:8080](http://localhost:8080)
