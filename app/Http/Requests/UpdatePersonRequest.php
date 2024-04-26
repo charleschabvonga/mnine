@@ -3,12 +3,13 @@
 namespace App\Http\Requests;
 
 use App\Rules\SouthAfricanIdNumber;
+use App\Traits\GenerateBirthDateFromSouthAfricanIdTrait;
 use App\Traits\PrefixMobileNumberTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdatePersonRequest extends FormRequest
 {
-    use PrefixMobileNumberTrait;
+    use GenerateBirthDateFromSouthAfricanIdTrait, PrefixMobileNumberTrait;
 
     /**
      * Determine if the user is authorized to make this request.
