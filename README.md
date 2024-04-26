@@ -1,5 +1,5 @@
 # Mnine - Project With Laravel 11.x
-[Mnine](http://mnine.xyz)
+Laravel website with content retrieving from [Mnine](http://mnine.xyz)
 
 ## Getting started
 
