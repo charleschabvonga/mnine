@@ -148,13 +148,12 @@
                             class="col-md-4 col-form-label text-md-end text-start">
                             Interests
                         </label>
-                        <div class="col-md-6">
+                        <div class="col-md-6" >
                             <select class="form-select form-control @error('interests') is-invalid @enderror"
                                 id="interests"
                                 name="interests[]"
                                 multiple
                                 data-live-search="true">
-                                <option disabled value="">Please select interests...</option>
                                 @foreach($interests as $interest)
                                 @if(isset($person))
                                 <option value="{{ old('interests[]', isset($interests) ? $interest->id : '') }}"

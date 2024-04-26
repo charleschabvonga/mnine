@@ -1,0 +1,16 @@
+.select2-container--default .select2-selection--multiple {
+    background-color: #f8fafc ;
+    border: 1px solid #dee2e6;
+    height: 100%;
+    border-radius: var(--bs-border-radius);
+    width: 80%;
+}
+
+.select2-search--inline {
+    margin-left: 8px;
+    padding-top: 2px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #dee2e6;
+}
