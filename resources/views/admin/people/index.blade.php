@@ -3,8 +3,10 @@
 
 <div class="mb-2" class="row">
     @session('success')
-        <div class="alert alert-success" role="alert">
-            {{ $value }}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-shield-fill-check mr-3"></i>
+            <strong>{{ $value }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endsession
 
