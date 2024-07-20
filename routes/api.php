@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('leadbyte', Leadbyte::class);
+Route::get('leadbyte', Leadbyte::class);
