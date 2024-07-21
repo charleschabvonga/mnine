@@ -43,4 +43,11 @@ return [
         ],
     ],
 
+    'leadbyte' => [
+        'access' => [
+            'leadbyte_x_key' => env('LEADBYTE_X_KEY'),
+            'leadbyte_sid' => env('LEADBYTE_SID'),
+        ],
+    ],
+
 ];

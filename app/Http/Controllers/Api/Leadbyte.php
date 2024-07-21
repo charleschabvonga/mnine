@@ -16,16 +16,14 @@ class Leadbyte extends Controller
         return Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-            'X_KEY' => $request->input('X_KEY'),
+            'X_KEY' => config('services.leadbyte.access.leadbyte_x_key'),
         ])->post('https://icon.leadbyte.co.uk/restapi/v1.3/leads', [
             'campid' => $request->input('campid'),
-            'sid' => $request->input('sid'),
-            'email' => $request->input('email'),
+            'sid' => config('services.leadbyte.access.leadbyte_sid'),
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
             'phone1' => $request->input('phone1'),
             'id_number' => $request->input('id_number'),
-            'comments' => $request->input('comments'),
         ])->json();
     }
 }
