@@ -13,6 +13,13 @@ class Leadbyte extends Controller
      */
     public function __invoke(Request $request)
     {
+        
+        if (substr($request->input('phone1'), 0, 1) !== '0') {
+            $phone = '0'.$request->input('phone1');
+        } else {
+            $phone = $request->input('phone1');
+        }
+
         return Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
@@ -22,7 +29,7 @@ class Leadbyte extends Controller
             'sid' => config('services.leadbyte.access.leadbyte_sid'),
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
-            'phone1' => $request->input('phone1'),
+            'phone1' => $phone,
             'id_number' => $request->input('id_number'),
         ])->json();
     }
