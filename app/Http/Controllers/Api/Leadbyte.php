@@ -45,6 +45,7 @@ class Leadbyte extends Controller
             'id_number' => $request->input('id_number'),
             'comments' => $request->input('comments'),
             'email' => $request->input('email'),
+            'optindate' => $request->input('optindate'),
         ])->json();
     }
 }
