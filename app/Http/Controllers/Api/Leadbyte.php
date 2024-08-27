@@ -46,6 +46,8 @@ class Leadbyte extends Controller
             'comments' => $request->input('comments'),
             'email' => $request->input('email'),
             'optindate' => $request->input('optindate'),
+            'reply' => $request->input('reply'),
+            'sms_date' => $request->input('sms_date'),
         ])->json();
     }
 }
