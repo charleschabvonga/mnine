@@ -20,17 +20,31 @@ class Leadbyte extends Controller
             $phone = $request->input('phone1');
         }
 
+        if ($request->input('sid')) {
+            $sid = $request->input('sid');
+        } else {
+            $sid = config('services.leadbyte.access.leadbyte_sid');
+        }
+
+        if ($request->input('x_key')) {
+            $x_key = $request->input('x_key');
+        } else {
+            config('services.leadbyte.access.leadbyte_x_key');
+        }
+
         return Http::withHeaders([
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-            'X_KEY' => config('services.leadbyte.access.leadbyte_x_key'),
+            'X_KEY' => $x_key,
         ])->post('https://icon.leadbyte.co.uk/restapi/v1.3/leads', [
             'campid' => $request->input('campid'),
-            'sid' => config('services.leadbyte.access.leadbyte_sid'),
+            'sid' => $sid,
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
             'phone1' => $phone,
             'id_number' => $request->input('id_number'),
+            'comments' => $request->input('comments'),
+            'email' => $request->input('email'),
         ])->json();
     }
 }
