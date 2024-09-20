@@ -29,7 +29,7 @@ class Leadbyte extends Controller
         if ($request->input('x_key')) {
             $x_key = $request->input('x_key');
         } else {
-            config('services.leadbyte.access.leadbyte_x_key');
+            $x_key = config('services.leadbyte.access.leadbyte_x_key');
         }
 
         return Http::withHeaders([
