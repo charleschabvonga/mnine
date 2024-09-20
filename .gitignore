@@ -21,3 +21,4 @@ stack.json
 mnine.pem
 storage/key
 storage/key.pub
+ec2-wanjigiholdings.pem
